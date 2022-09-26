@@ -80,4 +80,9 @@ img {
   border-radius: 10px;
   background-color: blue;
   color: #fff;
+  cursor: pointer;
+
+  &:hover{
+    transform: scale(1.05);
+  }
 }
