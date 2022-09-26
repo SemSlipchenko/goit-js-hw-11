@@ -26,3 +26,58 @@
   background-size: cover;
   background-position: center;
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+  padding-top: 100px;
+  overflow: hidden;
+
+  & .card {
+    width: calc((100% - 15px * 6) / 3);
+    margin: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+      & img {
+      border-radius: 10px;
+      }
+  }
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 0;
+  background-color: blue;
+}
+
+.load-more {
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: blue;
+  color: #fff;
+}
