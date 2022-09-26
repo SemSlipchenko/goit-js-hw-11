@@ -23,6 +23,7 @@ let lightbox = new SimpleLightbox('.card a', {
 
 let page = 1;
 let searchQuery = '';
+let hits = 0;
 
 refs.searchForm.addEventListener('submit', onFormSubmit);
 refs.loadMoreBtn.addEventListener('click', clickLoadMoreBtn);
@@ -57,4 +58,9 @@ async function clickLoadMoreBtn() {
     const response = await fetchImage(searchQuery, page);
     renderGallery(response.hits);
     lightbox.refresh();
+    hits += response.total;
+    if (hits === response.total) { 
+        refs.loadMoreBtn.classList.add('hidden');
+        Notiflix.Notify.warning("We're sorry, but you've reached the end of search results.");
+    };
 }
