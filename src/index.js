@@ -39,6 +39,7 @@ async function onFormSubmit(event) {
 
     const response = await fetchImage(searchQuery, page);
     hits = response.hits.length;
+    console.log(response)
 
     if (response.totalHits > 40) {
         refs.loadMoreBtn.classList.remove('hidden');
